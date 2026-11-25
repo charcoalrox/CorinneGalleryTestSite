@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Corinne's super awesome portfolio site</title>
+    <meta charset = "UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <!--Banner-->
+    <div class = "topContainer">
+        <img src = ./media/coricon.png alt="Circular photo of a troll doll wearing an artists outfit and holding a paintbrush">
+        <p>Corinne's awesome art portfolio page</p>
+    </div>
+
+    <!--overlay div-->
+    <div>
+        <!--Button to summon hyperlink overlay-->
+        <div class="burgerContainer" onclick="expandBurger(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <!--Links to other web pages-->
+        <div class="overlay" id="burger-contents">
+            <a href="main.html">gallery</a>
+            <br>
+            <a href="about.html">about</a>
+            <br>
+            <br>
+            <div>
+                <p><u>Like what you see? Contact me!</u></p>
+                <p>email@address.here</p>
+                <div class="container">
+                    <a href="https://www.instagram.com/speckledglowworm/">
+                        <img src="media/InstagramIcon.png" class="socialsicon">
+                    </a>
+                    <!--Also goes to instagram. I just wanted more icons for this section-->
+                    <a href="https://www.instagram.com/speckledglowworm/">
+                        <img src="media/tumblrIcon.webp" class="socialsicon">
+                    </a>
+
+                    <a href="https://www.instagram.com/speckledglowworm/">
+                        <img src="media/blueskyIcon.webp" class="socialsicon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Gallery section-->
+    <!--Eventually I want each item to grow when you hover-->
+    <!--clicking should allow a larger view, looking at other images in same foler, reading description-->
+    <div id="imagegrid" class="gridContainer" ></div>
+
+    <!--TODO: Move this into app.js-->
+    <script>
+        let imgArray = [
+            "Barbara Heart.png",
+            "Bear Friend.png",
+            "Butterfly Embroidery.png",
+            "Crying Moon.png",
+            "Fuck Your Juice Cleanse.png",
+            "House At Dawn Loom.png",
+            "Lock and Flowers.png",
+            "Strawberry Loom.png",
+            "Sunset Loom.png",
+            "Teenage Reliquary.png"
+        ];
+
+
+        let container = document.querySelector('#imagegrid');
+        for (var i = 0; i < imgArray.length; i++) {
+
+            let div = document.createElement('div');
+            let img = document.createElement('img');
+
+            // container.appendChild(div);
+            container.appendChild(ImageGridItem(img, i));
+        }
+        
+        function ImageGridItem(image, i) {
+            const img = document.createElement('img');
+
+            img.className = 'img';
+            img.src = "art/" + imgArray[i];
+            img.alt = imgArray[i];
+            img.id="image-clicked"
+            img.addEventListener("click", () => displayArt(img));
+
+            img.style.gridColumnEnd = `span ${getSpanEstimate(image.width)}`;
+            img.style.gridRowEnd = `span ${getSpanEstimate(image.height)}`;
+
+            return img;
+        }
+
+        function getSpanEstimate(size) {
+            if (size > 250) {
+                return 2;
+            }
+
+            return 1;
+        }
+
+    </script>
+
+    <!-- <div class="fullImgWrapper">
+        <img src = "art/Lock and Flowers.png">
+    </div> -->
+
+    <div class="displayBackground" id="displayBlock" onclick="hideElement(this)">
+        <div class="displayExitButton">
+            <div class="xBar1"></div>
+            <div class="xBar2"></div>
+        </div>
+        <div class="displayDescriptionDivLocation">
+            <div class="displayTitleDivLocation">
+                <img src="art/Lock and Flowers.png" class="displayImg">
+                <div class="displayTitle">
+                    <p class="displayTitleText">
+                    Lock and Flowers
+                    </p>
+                </div>
+            </div>
+                <div class="displayDescription">
+                    <p><u>About Piece</u></p>
+                    <p class="displayDescriptionText">Image Description can be really long because I think auto-wrapping is a thing</p>
+                </div>
+        </div>
+    </div>
+
+
+</body>

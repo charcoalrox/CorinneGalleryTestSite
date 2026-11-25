@@ -1,0 +1,204 @@
+/*All pages*/
+body{
+    background-color: aliceblue;
+}
+
+.topContainer {
+    display: flex;
+    min-height:220px;
+    justify-content: center; /*Center Vertically*/
+    align-items: center; /*Center Horizontally*/
+}
+
+.burgerContainer {
+    /* display: inline-block; */
+    cursor: pointer;
+    max-width: 50px;
+    max-height: 50px;
+
+    position: fixed;
+    background-color: whitesmoke;
+    margin: 7px;
+    width: 45px;
+    border-radius: 5px;
+    filter: drop-shadow();
+
+    z-index: 1;
+
+}
+
+.bar1, .bar2, .bar3 { /*individual bars for the burger icon to animate*/
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 5px;
+    position: 5px;
+
+    transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+.overlay{
+    display: none;
+    background-color: aquamarine;
+    z-index:1;
+    position: fixed;
+
+    left:59px; /*Leave exact room for the buttom*/
+    top:230px; /*Leave room for upper icon*/
+    bottom:0; /*Overlay goes all the way down*/
+}
+
+.socialsicon{
+    max-width:30px;
+}
+
+/*Gallery Page*/
+.container {
+    display: flex;
+}
+
+.container div{
+    width: 100%;
+}
+
+.container, .overlay {
+    grid-area: 1 / 1;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-rows: repeat(auto-fit, 260px);
+  grid-auto-flow: dense;
+  gap: 3rem 3rem;
+}
+
+.img {
+    min-width:200px;
+    min-height:200px;
+    max-height: 300px;
+    max-width: 300px;
+    border-radius: 16px;
+}
+
+.img:hover {
+    cursor: pointer;
+    filter: brightness(130%);
+}
+
+/*gallery image larger display overlay*/
+.displayBackground{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    background-color: rgb(0 0 0 / 50%); 
+    display: none;
+}
+
+.displayExitButton{
+    background-color: white;
+    cursor: pointer;
+    filter: drop-shadow();
+    z-index: 2;
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    border-radius: 20px;
+    margin: 3% 95%;
+
+    justify-content: center; /*Center Vertically*/
+    align-items: center; /*Center Horizontally*/
+}
+
+.xBar1, .xBar2 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+
+}
+
+.xBar1 {
+    transform: translate(0, 18px) rotate(-45deg);
+    margin-left: 5px;
+}
+
+.xBar2 {
+    transform: translate(0, 14px) rotate(45deg);
+    margin-left: 5px;
+}
+/* 
+.fullimgWrapper{
+    z-index: 3;
+    background-color: red;
+    width: 50%;
+    height: 50%;
+    position:fixed;
+    top: 25%;
+    left: 25%;
+    text-align:center;
+} */
+
+.displayImg {
+    z-index: 3;
+    opacity: 1;
+
+    display: block;
+    margin: auto;
+    width: 50%;
+    
+}
+
+.displayTitleDivLocation{
+    display: flex;
+    flex-direction: column;
+}
+
+.displayTitle{
+    background-color: white;
+    width: 50%;
+    margin: 1px auto;
+    text-align: center;
+}
+
+.displayDescriptionDivLocation{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20%;
+}
+
+.displayDescription{
+    background-color: white;
+    width: 350px;
+    margin-left: -184px;
+    overflow: auto;
+    
+}
+
+/*About me Page*/
+.horizontal-line {
+  border: none;
+  height: 2px;
+  background-color: #5c5c5ca4;
+  width: 80%;
+  margin: 20px auto; /* Centers the line */
+}
+
+.aboutmeselfie {
+    max-width: 500px;
+    max-height: 500px;
+
+    border-radius: 16px;
+}

@@ -1,0 +1,31 @@
+overall:
+    ✅better hamburger button from tutorial
+    ✅Hamburger starts closed
+    ❌maybe hamburger follows window and ends up on left side
+    ✅Burger starting in main div doesn't always work. It needs to exist in body with absolute coordinates
+    hovering over anything should offer feedback. Perhaps a box around the Burger
+    I feel like the burger should persist across pages and close when you close it
+
+Main:
+    ✅ Dynamic gallery display
+    hovering over any image should do something for feedback
+        maybe they're all rounded at edges but hovering hardens?
+    clicking image shows full size over everything with title at bottom
+    There's a second div with a description to the right
+    I can discuss albums with Corinne but I'm not willing to start until I know what they would look like
+About:
+    ✅Horizontal lines above and below the description stuff
+    ✅ Soft borders around Corinne selfie (IE rounded edges)
+    ❌center everything
+    buffer between text and image. Also a more consistent centering for them
+        I suspect this will be improved when I fix the burger icon as planned above
+Contact:
+    ❌ Not even started. Might night be necessary?
+    ✅ Maybe we do icons and an email at the bottom of the hamburger?
+
+
+notes on the design to share:
+    The burger button is a concept I don't have but think could be refined. It's supposed ot have a drop shadow (I cannot see one), 
+    the overlay inside also turned out quite small and I Don't have it but idk if I love It
+    
+    I've also considered that the button maybe should stretch out and do an animation where the overlay comes in from the left
